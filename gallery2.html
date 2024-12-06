@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <title>Membership</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: black;
+        color: white;
+      }
+
+      .video-bg {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+        background-size: cover;
+      }
+
+
+.crd-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+    /* Ensure images don't overflow */
+}
+
+.crosel-img {
+    width: 60% !important;
+    height: auto;
+    object-fit: cover;
+    border-style: solid !important;
+    border-color: white !important;
+    border-radius: 25px !important;
+}
+
+      
+      @media(max-width:600px){
+            .crd-container {
+                margin-left: 3rem;
+            }
+
+            .crd-content {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .crosel-img {
+                width: 88% !important;
+                border-style: solid !important;
+                border-color: white !important;
+                border-radius: 25px !important;
+
+            }
+  
+/* 
+        .faq-content {
+          margin-left: 200px !important;
+          margin-right: 200px !important;
+          position: relative !important;
+          transition: 0.7s !important;
+        } */
+
+        .frmbtn {
+          width: 140px !important;
+          transition: 0.6s !important;
+        }
+
+        .foter {
+          width: 100% !important;
+          max-width: 991px !important;
+        }
+}
+
+@media(min-width:600px) and (max-width:767px){
+            .crd-container {
+                margin-left: 6rem;
+            }
+
+            .crd-content {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .crosel-img {
+                width: 88% !important;
+                border-style: solid !important;
+                border-color: white !important;
+                border-radius: 25px !important;
+
+            }
+  .bkfilter{
+    background-color: rgba(90, 85, 85, 0.5); 
+    height: 100%; 
+    width: 100%; 
+    min-height: 100%; 
+    min-width: 100%; 
+    z-index: 0;
+  }
+  
+        .faq-content {
+          margin-left: 200px !important;
+          margin-right: 200px !important;
+          position: relative !important;
+          transition: 0.7s !important;
+        } */
+
+        .frmbtn {
+          width: 140px !important;
+          transition: 0.6s !important;
+        }
+
+        .foter {
+          width: 100% !important;
+          max-width: 991px !important;
+        }
+}
+
+@media(min-width:768px) and (max-width:991px){
+            .crd-container {
+                margin-left: 5rem;
+            }
+
+            .crd-content {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .crosel-img {
+                width: 88% !important;
+                border-style: solid !important;
+                border-color: white !important;
+                border-radius: 25px !important;
+
+            }
+
+} 
+@media (max-width: 767px) {
+            .crd-content {
+                /* width: 50%; */
+                flex-direction: column;
+                gap: 10px;
+                transition: 0.6s;
+            }
+        }
+        @media (min-width: 768px) and (max-width: 991px) {
+            .crd-content {
+                /* width: 40%; */
+                flex-direction: column;
+                gap: 15px;
+                transition: 0.6s;
+            }
+
+        }
+
+@media(min-width:992px) and (max-width:1236px){
+  .crd-container{
+    margin-left: 15%!important;
+    /* margin-right: 15%!important; */
+    margin-right: 30%!important;
+    display: flex!important;
+    flex-direction: row!important;
+    justify-content: space-around!important;
+    transition:0.6s!important;
+  }
+  .navbr {
+          width: 100% !important;
+          min-width: 1200px !important;
+          height: 3vh !important;
+          position: relative !important;
+        }
+  
+}
+
+
+@media(max-width:991px) {
+        .navbr {
+          width: 100% !important;
+          min-width: 400px !important;
+          height: 30vh !important;
+          position: relative !important;
+        }
+
+        .nav-cont {
+          margin-top: 0.3rem !important;
+          padding: 0.6rem !important;
+          font-size: 18px !important;
+          font-weight: bold !important;
+        }
+
+        .navshrk {
+          margin-right: 200px !important;
+          position: relative !important;
+          background-color: rgb(5, 0, 0) !important;
+          padding:1rem!important;
+        }
+
+        .navbrbk {
+          background-color: rgb(5, 0, 0) !important;
+          z-index: -1 !important;
+          backdrop-filter: blur(20px) !important;
+          width: 200px !important;
+        }
+
+        .navbutn {
+          width: 200px !important;
+          font-size: 18px !important;
+          margin-left: 6rem!important;
+        }
+
+        .logo {
+          font-size: 3rem !important;
+          color: white !important;
+          font-weight: 800 !important;
+          cursor: pointer !important;
+          transition: 0.3s ease-in-out !important;
+          margin: 0.8rem !important;
+        }
+
+        .logo:hover {
+          transform: scale(1.1);
+        }
+/* 
+        .faq-content {
+          margin-left: 200px !important;
+          margin-right: 200px !important;
+          position: relative !important;
+          transition: 0.7s !important;
+        } */
+
+        .frmbtn {
+          width: 140px !important;
+          transition: 0.6s !important;
+        }
+
+        .foter {
+          width: 100% !important;
+          max-width: 1200px !important;
+        }
+      }
+@media(min-width:1237px){
+  .foter {
+          width: 100% !important;
+          max-width: 1600px !important;
+        }
+}
+@media(min-width:992px) and (max-width:2000px) {
+
+.crd-container {
+
+    margin-left: 7rem;
+    margin-right: 15rem;
+    margin-bottom: 10rem;
+}
+
+.crd-content {
+    flex-direction: column;
+    width: 100%;
+}
+
+.crosel-img {
+    width: 100% !important;
+    border-style: solid !important;
+    border-color: white !important;
+    border-radius: 25px !important;
+}
+
+
+}
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+            font-family: -apple-system, sans-serif;
+        }
+
+        :root {
+            --bg-color: #000;
+            --snd-bg-color: #111;
+            --text-color: #fff;
+            --main-color: rgb(0, 255, 255);
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 9%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            transition: all 0.5s ease;
+        }
+
+        .logo {
+            font-size: 3rem;
+            color: var(--text-color);
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .logo span {
+            color: var(--main-color);
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .navbar ul {
+            display: flex;
+        }
+
+        .navbar li {
+            position: relative;
+            font-style: none;
+        }
+
+        .navbar a {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: var(--text-color);
+            margin-left: 4rem;
+            transition: all 0.5s ease;
+            border-bottom: 3px solid transparent;
+            text-decoration: none;
+        }
+
+        .navbar a:hover,
+        .navbar a:active {
+            color: var(--main-color);
+            border-bottom: 3px solid var(--main-color);
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px 15px;
+            white-space: nowrap;
+            color: var(--text-color);
+        }
+
+        .dropdown a:hover {
+            background-color: #555;
+        }
+
+        .navbar li:hover .dropdown {
+            display: block;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background: transparent;
+            color: var(--main-color);
+            border: 2px solid var(--main-color);
+            border-radius: 1rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+            transition: all 0.5s ease;
+        }
+
+        .nav-btn:hover {
+            background: var(--main-color);
+            color: var(--text-color);
+            box-shadow: 0 0 18px var(--main-color);
+        }
+
+        #menu-icon {
+            font-size: 3.6rem;
+            color: var(--main-color);
+            cursor: pointer;
+            display: none;
+        }
+
+        @media (max-width: 991px) {
+            .navbar {
+                background-color: #111; /* Set your desired background color */
+            }
+
+            .navbar ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.8);
+                width: 100%;
+                text-align: center;
+                padding: 1rem 0;
+            }
+
+            .navbar.active ul {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .navbar li {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .navbar a {
+                margin-left: 0;
+                font-size: 2rem;
+            }
+
+            .dropdown {
+                position: static;
+                display: none;
+                background-color: transparent;
+                box-shadow: none;
+            }
+
+            .nav-btn {
+                display: none;
+            }
+
+            #menu-icon {
+                display: block;
+            }
+        }
+        footer {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(smoke2.png) no-repeat center center/cover;
+        color: var(--light);
+        padding: 40px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      .footer-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 0 100px;
+      }
+
+      .footer-column {
+        flex: 1;
+        margin: 20px;
+      }
+
+      .footer-column h2 {
+        margin-bottom: 20px;
+        color: var(--primary);
+      }
+
+      .footer-column p {
+        margin-bottom: 10px;
+      }
+
+      .footer-column ul {
+        padding: 0;
+      }
+
+      .footer-column ul li {
+        list-style: none;
+        margin-bottom: 10px;
+      }
+
+      .footer-column ul li a {
+        color: var(--light);
+      }
+
+      .footer-column form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .footer-column form input {
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        border: 1px solid var(--secondary);
+        background-color: var(--light);
+      }
+
+      .footer-column form button {
+        padding: 10px;
+        border-radius: 4px;
+        border: none;
+        background-color: var(--primary);
+        color: var(--light);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .footer-column form button:hover {
+        background-color: var(--secondary);
+        color: var(--black);
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .social-icons i {
+        font-size: 1.5em;
+        color: var(--primary);
+        transition: color 0.3s ease;
+      }
+
+      .social-icons i:hover {
+        color: var(--secondary);
+      }
+
+      .footer-note {
+        margin-top: 20px;
+        color: var(--light);
+      }
+
+      hr {
+        margin: 20px 100px;
+        border: 0.5px solid var(--light);
+      }
+    </style>
+</head>
+
+<body style="margin: 0; padding: 0; background-size: cover;">
+  <br><br><br><br><br><br><br>
+  <!-- NAVBAR -->
+  <header>
+    <a href="#" class="logo">Prime<span>Fitness</span></a>
+    <div id="menu-icon">&#9776;</div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="Index.html">About</a></li>
+            <li><a href="Index.html">Services</a></li>
+            <li><a href="FAQ's.html">FAQ's</a></li>
+            <li><a href="getintouch.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="top-btn">
+        <a href="#" class="nav-btn">Join Us</a>
+    </div>
+</header>
+  <div class="bkfilter">
+    <video autoplay muted loop class="video-bg">
+      <source src="images/videos/5756199-hd_1920_816_24fps.mp4" type="video/mp4">
+    </video>
+    <h1 class="hedar" style="text-align: center;">Gallery</h1>
+    <div class="crd-container" >
+        <div class="crd-content">
+            <div id="carouselExampleRide" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- group lunges practice -->
+                    <div class="carousel-item active">
+                        <img src="images/gallery/every-step-taken-towards-fitness-600nw-2149264147.jpg"
+                            class="d-block w-100 crosel-img" alt="...">
+                        <div class="carousel-caption d-none d-sm-block">
+                            <h3 style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Group
+                                Lunges Practice</h3>
+                            <p style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Group
+                                lunges practice adds a dynamic and engaging dimension to fitness routines,
+                                fostering camaraderie and motivation among participants. This synchronized
+                                exercise not only targets multiple muscle groups but also promotes coordination
+                                and endurance.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kateballs squads -->
+                <div class="carousel-item">
+                    <img src="images/gallery/groupfitness.jpeg" class="d-block w-100 crosel-img" alt="...">
+                    <div class="carousel-caption d-none d-sm-block">
+                        <h3 style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Katteball
+                            Squads</h3>
+                        <p style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Kettlebell
+                            squads in the gym provide a dynamic and effective workout regimen that targets
+                            multiple muscle groups simultaneously. This versatile fitness tool not only enhances
+                            strength and endurance but also improves balance and coordination.</p>
+                    </div>
+                </div>
+                <!-- Gym Swiming -->
+                <div class="carousel-item">
+                    <img src="images/gallery/gym-swimming-pool.jpg" class="d-block w-100 crosel-img" alt="...">
+                    <div class="carousel-caption d-none d-sm-block">
+                        <h3 style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Elegant
+                            Swiming Pools</h3>
+                        <p style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">
+                            ChatGPT
+                            Gym swimming offers a unique and refreshing way to achieve fitness goals while
+                            enjoying the benefits of aquatic exercise. Whether for leisurely laps or intense
+                            cardio workouts, the pool environment provides low-impact resistance training that
+                            enhances cardiovascular fitness, strength, and flexibility.</p>
+                    </div>
+                </div>
+                <!-- group excercise -->
+                <div class="carousel-item">
+                    <img src="images/gallery/MG_8437-cropped-1024x581.jpg" class="d-block w-100 crosel-img"
+                        alt="...">
+                    <div class="carousel-caption d-none d-sm-block">
+                        <h3 style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Group Session
+                            Therapy</h3>
+                        <p style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Group session
+                            therapy in a gym setting typically involves a structured workout class led by a
+                            trained instructor. These sessions are designed to improve physical fitness, promote
+                            mental well-being, and foster a sense of community among participants. Activities
+                            can range from aerobic exercises, strength training, and flexibility routines, to
+                            specialized programs like yoga, Pilates, or high-intensity interval training (HIIT).
+                        </p>
+                    </div>
+                </div>
+                <!-- cycling area -->
+                <div class="carousel-item">
+                    <img src="images/gallery/uyynza5tmypufqqve330.jpeg" class="d-block w-100 crosel-img"
+                        alt="...">
+                    <div class="carousel-caption d-none d-sm-block">
+                        <h3 style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Elegant
+                            Cycling Area</h3>
+                        <p style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">where fitness
+                            meets sophistication in perfect harmony. Nestled within the heart of Shoty, our
+                            cycling area offers a sanctuary for health enthusiasts looking to elevate their
+                            workout experience. With state-of-the-art equipment and a serene ambiance, every
+                            session promises a blend of comfort and effectiveness. Whether you're a seasoned
+                            cyclist or just starting your fitness journey, our dedicated space is designed to
+                            inspire and motivate.</p>
+                    </div>
+                </div>
+                <!-- gym machine area -->
+                <div class="carousel-item">
+                    <img src="images/gallery/com_gym2_d47c7d94-bd54-4573-953f-61bf81fca655.jpg"
+                        class="d-block w-100 crosel-img" alt="...">
+                    <div class="carousel-caption d-none d-sm-block">
+                        <h3 style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Gym Machining
+                            Area</h3>
+                        <p style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Welcome to our
+                            gym's machine area, where innovation meets fitness. Equipped with cutting-edge
+                            machines tailored to every workout need, our space ensures a dynamic and effective
+                            training experience. Whether you're toning, building strength, or improving
+                            endurance, our modern facilities are designed to support your fitness journey. Join
+                            us in achieving your goals with precision and comfort at our state-of-the-art
+                            machine area.</p>
+                    </div>
+                </div>
+                <!-- roping -->
+                <div class="carousel-item">
+                    <img src="images/gallery/dut-sml.jpg" class="d-block w-100 crosel-img" alt="...">
+                    <div class="carousel-caption d-none d-sm-block">
+                        <h3 style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Roping Area
+                        </h3>
+                        <p style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Welcome to our
+                            gym's roping area, where strength meets agility and determination. Our roping area
+                            is designed for those looking to challenge themselves and elevate their fitness to
+                            new heights. Whether you're practicing rope climbing techniques or incorporating it
+                            into a full-body workout, our facilities are equipped to support your goals. Join us
+                            in pushing boundaries and achieving peak performance in our dynamic roping area.</p>
+                    </div>
+                </div>
+                <!-- boxing ring -->
+                <div class="carousel-item">
+                    <img src="images/gallery/full_hd_retina.jpeg" class="d-block w-100 crosel-img" alt="...">
+                    <div class="carousel-caption d-none d-sm-block">
+                        <h3 style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Furocious
+                            Boxing Ring </h3>
+                        <p style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Step into our
+                            gym's boxing ring, where determination meets discipline and technique reigns
+                            supreme. Whether you're honing your skills, training for competition, or simply
+                            enjoying a high-intensity workout, our boxing ring offers a space where passion and
+                            athleticism converge. Join us in embracing the art of boxing in a professional
+                            environment designed to inspire and elevate your fitness journey.</p>
+                    </div>
+                </div>
+                <!-- Gym MMA Area -->
+                <div class="carousel-item">
+                    <img src="images/gallery/gymMMAarea.JPG" class="d-block w-100 crosel-img" alt="...">
+                    <div class="carousel-caption d-none d-sm-block">
+                        <h3 style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Boxing Pads
+                            Area</h3>
+                        <p style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Welcome to our
+                            gym's boxing bag area, where strength meets technique and determination fuels every
+                            punch. Whether you're training for competition, releasing stress, or improving your
+                            overall fitness, our dedicated boxing bag area offers a dynamic space to refine your
+                            skills. With a variety of bags suited for different workouts—from heavy bags for
+                            power punches to speed bags for agility and coordination—you'll find the perfect
+                            setup to achieve your boxing goals. Join us in harnessing the intensity and focus of
+                            boxing in a supportive environment designed to elevate your fitness journey.</p>
+                    </div>
+                </div>
+                <!-- Gym Machine Press Area -->
+                <div class="carousel-item">
+                    <img src="images/gallery/IMG_2360.JPG" class="d-block w-100 crosel-img" alt="...">
+                    <div class="carousel-caption d-none d-sm-block">
+                        <h3 style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Gym MMA Area
+                        </h3>
+                        <p style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Welcome to our
+                            gym's MMA area, where martial arts prowess meets modern fitness. Designed for
+                            enthusiasts of mixed martial arts, our facility provides a dedicated space for
+                            training in disciplines like Brazilian Jiu-Jitsu, Muay Thai, wrestling, and more.
+                        </p>
+                    </div>
+                </div>
+                <!-- Gym Washroom Area -->
+                <div class="carousel-item">
+                    <img src="images/gallery/istockphoto-938771772-612x612.jpg" class="d-block w-100 crosel-img"
+                        alt="...">
+                    <div class="carousel-caption d-none d-sm-block">
+                        <h3 style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Elegant Gym
+                            Washrooms</h3>
+                        <p style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">elegant
+                            washrooms into a gym setting enhances both functionality and ambiance, offering
+                            members a comfortable and stylish space to refresh and relax. From modern design
+                            elements to thoughtful amenities, these facilities aim to elevate the overall
+                            experience, ensuring hygiene, accessibility, and aesthetic appeal.</p>
+                    </div>
+                </div>
+                <!-- Gym Cycling Area -->
+                <div class="carousel-item">
+                    <img src="images/gallery/men-women-gym-cycling-together-happily-generated-by-ai_188544-10868.jpg"
+                        class="d-block w-100 crosel-img" alt="...">
+                    <div class="carousel-caption d-none d-sm-block">
+                        <h3 style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Gym Cycling
+                            Machines</h3>
+                        <p style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Welcome to our
+                            gym's cycling machine area, where cardio meets precision engineering. Designed for
+                            both beginners and seasoned cyclists, our state-of-the-art machines offer an
+                            immersive and effective workout experience. Whether you're aiming to boost
+                            endurance, burn calories, or improve cardiovascular health, our cycling machines
+                            provide adjustable settings and real-time metrics to track your progress. Join us in
+                            pedaling towards your fitness goals in a comfortable and motivating environment
+                            dedicated to enhancing your overall well-being.</p>
+                    </div>
+                </div>
+                <!-- Gym Massage Area -->
+                <div class="carousel-item">
+                    <img src="images/gallery/1.jpeg" class="d-block w-100 crosel-img" alt="...">
+                    <div class="carousel-caption d-none d-sm-block">
+                        <h3 style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Elegant
+                            Massage Area</h3>
+                        <p style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">
+                            ChatGPT
+                            Welcome to our gym's massage machine area, where relaxation meets rejuvenation.
+                            Designed for post-workout recovery and stress relief, our massage machines provide a
+                            soothing experience to ease muscle tension and enhance overall well-being. Whether
+                            you're seeking a deep tissue massage, soothing vibration therapy, or targeted relief
+                            for specific muscle groups, our state-of-the-art equipment is here to support your
+                            recovery journey. Join us in experiencing the benefits of advanced massage
+                            technology in a tranquil and rejuvenating environment dedicated to your health and
+                            fitness.</p>
+                    </div>
+                </div>
+                <!-- Gym Dumbells Area -->
+                <div class="carousel-item">
+                    <img src="images/gallery/shutterstock_718309441-800x534.jpg"
+                        class="d-block w-100 crosel-img" alt="...">
+                    <div class="carousel-caption d-none d-sm-block">
+                        <h3 style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Gym Dumbells
+                            Area</h3>
+                        <p style="backdrop-filter: blur(5px);background-color:rgb(4, 0, 0,0.2); margin-right: 5rem;">Welcome to our
+                            gym's dumbbell area, your gateway to strength and muscle development. Here, amidst a
+                            backdrop of focused energy and determination, you'll find a comprehensive selection
+                            of dumbbells catering to all fitness levels. Whether you're sculpting your physique,
+                            enhancing your strength, or engaging in targeted exercises, our dumbbell area offers
+                            the tools and space to support your goals. Join us in harnessing the power of free
+                            weights and achieving unparalleled results in a dynamic and supportive environment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide"
+        data-bs-slide="prev">
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide"
+        data-bs-slide="next">
+        <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <a href="#" class="logo" style="font-size: 40px;">Prime<span>Fitness</span></a>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+          recusandae nemo deleniti ea in velit, quas omnis perferendis,
+          officiis officia praesentium ad vero porro, obcaecati nam nulla cum
+          atque rerum.
+        </p>
+      </div>
+      <div class="footer-column" style="font-size: ;">
+        <h2>Products</h2>
+        <p>Dumbbells</p>
+        <p>Plates</p>
+        <p>Benches</p>
+        <p class="email-id">www.PrimeFitness.com.pk</p>
+        <p>0334-2102118</p>
+      </div>
+      <div class="footer-column">
+        <h2>Links</h2>
+        <ul>
+          <li><a href="Index.html">Home</a></li>
+          <li><a href="Index.html">About</a></li>
+          <li><a href="Index.html">Services</a></li>
+          <li><a href="FAQ's.html">Faqs</a></li>
+          <li><a href="getintouch.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Newsletter</h3>
+        <form>
+          <input type="email" placeholder="Enter your email id" required />
+          <button type="submit">Submit</button>
+        </form>
+        <div class="social-icons">
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-whatsapp"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-twitter"></i>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <p class="footer-note">© 2023 Prime Fitness. All rights reserved.</p>
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+UJ0uyl64qeWZB6NR0VWbl0d2WpF" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
+        let joinUsBtn = document.querySelector('.top-btn .nav-btn');
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+            if (navbar.classList.contains('active')) {
+                joinUsBtn.style.display = 'none';
+            } else {
+                joinUsBtn.style.display = 'inline-block';
+            }
+        };
+
+        window.onresize = () => {
+            if (window.innerWidth > 991) {
+                joinUsBtn.style.display = 'inline-block';
+            } else {
+                if (!navbar.classList.contains('active')) {
+                    joinUsBtn.style.display = 'inline-block';
+                } else {
+                    joinUsBtn.style.display = 'none';
+                }
+            }
+        };
+
+        window.onscroll = () => {
+            menuIcon.classList.remove('bx-x');
+            navbar.classList.remove('active');
+            joinUsBtn.style.display = 'inline-block';
+        };
+
+        if (window.innerWidth <= 991) {
+            joinUsBtn.style.display = 'none';
+        }
+    });
+</script>
+</body>
+
+</html>
